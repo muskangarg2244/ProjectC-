@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+  
+  <style>
+  /* Note: Try to remove the following lines to see the effect of CSS positioning */
+  .affix {
+      top: 0;
+      width: 100%;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+	
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+	.topper
+	  {
+		  display: flex;
+	  }
+	  .logo
+	  {
+		  margin: 3px;
+		  
+	  }
+  </style>
+</head>
+<body bgcolor="">
+ 
+ <!-- This is a Navbar -->
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header topper">
+     <img src="n-cafe.png" width="40px" height="40px" class="logo">
+      <ul class="nav navbar-nav">
+      <li><a class="navbar-brand" href="#">Naniya'zz Cafe</a></li>
+      </ul>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">About</a></li>
+		<li><a href="#">Contact Us</a></li>
+     </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a id="aSignUp" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li style="background-color: red;"><a href="#">ORDER NOW ! <span class="glyphicon glyphicon-triangle-right"></span></a></li>
+    </ul>
+
+  </div>
+</nav>
+
+<div>
+    <h3>Welcome to Naniya'zz Cafe</h3>
+    <h6>What would you like to have</h6>
+
+</div>
+
+<script type="text/javascript">
+    $("#aSignUp").on("click", function () {
+        alert('a');
+        location.href = "UserInput.html";
+    });
+    var locations = [
+      ['Panchkula', 30.6942, 76.8606, 4],
+      ['Karnal', 29.6857, 76.9905, 5],
+      ['Kurukshetra', 29.9695, 76.8783, 3],
+      ['Chandigarh', 30.7333, 76.7794, 2]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(29.0588, 76.0856),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
+  
+</body>
+</html>

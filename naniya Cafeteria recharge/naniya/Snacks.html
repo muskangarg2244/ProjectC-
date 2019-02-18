@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>snacks</title>
+    <link href="n-cafe.ico" rel="shortcut icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+    .topper
+	  {
+		  display: flex;
+	  }
+	  .logo
+	  {
+		  margin: 3px;
+
+	  }
+
+	  .footer-img {
+		height: 100px;
+		width: auto;
+		padding: 25px;
+		border: 0;
+	}
+
+	  .center {
+		text-align: center;
+		display: flex;
+		margin: auto;
+	}
+    </style>
+</head>
+
+<body background="wood.jpg">
+
+    <nav class="navbar navbar-inverse">
+     <div class="container-fluid">
+       <div class="navbar-header topper">
+        <img src="n-cafe.png" width="40px" height="40px" class="logo">
+         <ul class="nav navbar-nav">
+         <li><a class="navbar-brand" href="Restaurant.html">Naniya'zz Cafe</a></li>
+         </ul>
+       </div>
+       <ul class="nav navbar-nav">
+         <li class="active"><a href="about.html">About</a></li>
+         <li class="active"><a href="contact.html">Contact Us</a></li>
+        </ul>
+       <ul class="nav navbar-nav navbar-right">
+        <li><a id="userInfo" href="#" style="color:white"><span class=""></span></a></li>
+        <li><a id="logOut" href="Restaurant.html"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+         <li><a id="aOrderNow" href="Order.html">My Cart <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+       </ul>
+     </div>
+   </nav>
+
+    <div class="container">
+        <ul class="thumbnails" style="list-style: none;">
+            <div class="row">
+                <div class="col-md-6">
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="pasta.jpg">
+                            <div class="caption">
+                                <h3>Pasta</h3>
+                                <h3><strong>₹ 100</strong></h3>
+                                <div class="row" style="width:170px">
+                                    <div class="col-md-6 column" style="text-align: right"><h4>Quantity:</h4> </div>
+                                    <div class="col-md-6 column" style="text-align: right">
+                                        <div class="input-group" data-role="quantityCtrl" style="width:150px; margin-bottom:10px">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p align="center"><a href="/" class="btn btn-primary btn-block addToCart" data-price="100" data-item="Pasta">Add to Cart</a></p>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <div class="col-md-6">
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="spaghetti.jpg">
+                            <div class="caption">
+                                <h3>Spaghetti</h3>
+                                <h3><strong>₹ 70</strong></h3>
+                                <div class="row" style="width:170px">
+                                    <div class="col-md-6 column" style="text-align: right"><h4>Quantity:</h4> </div>
+                                    <div class="col-md-6 column" style="text-align: right">
+                                        <div class="input-group" data-role="quantityCtrl" style="width:150px; margin-bottom:10px">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p align="center"><a href="/" class="btn btn-primary btn-block addToCart" data-price="70" data-item="Spaghetti">Add to Cart</a></p>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="grbread.jpg">
+                            <div class="caption">
+                                <h3>Garlic Bread</h3>
+                                <h3><strong>₹ 50</strong></h3>
+                                <div class="row" style="width:170px">
+                                    <div class="col-md-6 column" style="text-align: right"><h4>Quantity:</h4> </div>
+                                    <div class="col-md-6 column" style="text-align: right">
+                                        <div class="input-group" data-role="quantityCtrl" style="width:150px; margin-bottom:10px">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p align="center"><a href="/" class="btn btn-primary btn-block addToCart" data-price="50" data-item="Garlic Bread">Add to Cart</a></p>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+
+                <div class="col-md-6">
+
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="veg sandwitch.jpg">
+                            <div class="caption">
+                                <h3>Veg Sandwitch</h3>
+                                <h3><strong>₹ 25</strong></h3>
+                                <div class="row" style="width:170px">
+                                    <div class="col-md-6 column" style="text-align: right"><h4>Quantity:</h4> </div>
+                                    <div class="col-md-6 column" style="text-align: right">
+                                        <div class="input-group" data-role="quantityCtrl" style="width:150px; margin-bottom:10px">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p align="center"><a href="/" class="btn btn-primary btn-block addToCart" data-price="25" data-item="Veg Sandwitch">Add to Cart</a></p>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="wrap.jpg">
+                            <div class="caption">
+                                <h3>Veg. Wraps</h3>
+                                <h3><strong>₹ 50</strong></h3>
+                                <div class="row" style="width:170px">
+                                    <div class="col-md-6 column" style="text-align: right"><h4>Quantity:</h4> </div>
+                                    <div class="col-md-6 column" style="text-align: right">
+                                        <div class="input-group" data-role="quantityCtrl" style="width:150px; margin-bottom:10px">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p align="center"><a href="/" class="btn btn-primary btn-block addToCart" data-price="50" data-item="Wraps">Add to Cart</a></p>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+
+                <div class="col-md-6">
+
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="burger.jpg">
+                            <div class="caption">
+                                <h3>Veg Burger</h3>
+                                <h3><strong>₹ 25</strong></h3>
+                                <div class="row" style="width:170px">
+                                    <div class="col-md-6 column" style="text-align: right"><h4>Quantity:</h4> </div>
+                                    <div class="col-md-6 column" style="text-align: right">
+                                        <div class="input-group" data-role="quantityCtrl" style="width:150px; margin-bottom:10px">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p align="center"><a href="/" class="btn btn-primary btn-block addToCart" data-price="25" data-item="Veg Burger">Add to Cart</a></p>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="Samosa.jpg">
+                            <div class="caption">
+                                <h3>Baked Samosa</h3>
+                                <h3><strong>₹ 10</strong></h3>
+                                <div class="row" style="width:170px">
+                                    <div class="col-md-6 column" style="text-align: right"><h4>Quantity:</h4> </div>
+                                    <div class="col-md-6 column" style="text-align: right">
+                                        <div class="input-group" data-role="quantityCtrl" style="width:150px; margin-bottom:10px">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p align="center"><a href="/" class="btn btn-primary btn-block addToCart" data-price="10" data-item="Baked Samosa">Add to Cart</a></p>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+
+                <div class="col-md-6">
+
+                    <li class="span4">
+                        <div class="thumbnail">
+                            <img src="fries.jpg">
+                            <div class="caption">
+                                <h3>French Fries</h3>
+                                <h3><strong>₹ 25</strong></h3>
+                                <div class="row" style="width:170px">
+                                    <div class="col-md-6 column" style="text-align: right"><h4>Quantity:</h4> </div>
+                                    <div class="col-md-6 column" style="text-align: right">
+                                        <div class="input-group" data-role="quantityCtrl" style="width:150px; margin-bottom:10px">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-left-minus btn btn-danger btn-number" data-type="minus" data-field="">
+                                                    <span class="glyphicon glyphicon-minus"></span>
+                                                </button>
+                                            </span>
+                                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                                            <span class="input-group-btn">
+                                                <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                                    <span class="glyphicon glyphicon-plus"></span>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p align="center"><a href="/" class="btn btn-primary btn-block addToCart" data-price="25" data-item="French Fries">Add to Cart</a></p>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+
+            </div>
+        </ul>
+    </div>
+    <script>
+
+    $("#aOrderNow").on("click", function (evt) {
+        location.href = "Order.html";
+    });
+    $("#aHome").on("click", function () {
+        location.href = "home.html";
+    });
+    $("#logOut").on("click", function () {
+        location.href = "home.html";
+        localStorage.setItem("addToCartItems", "");
+        localStorage.setItem("loggedInUser", "");
+    });
+    $("#userInfo").text("Welcome " + localStorage.getItem("loggedInUser"));
+    var quantitiy = 0;
+    $('.quantity-right-plus').click(function (e) {
+
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+
+        var txtCtrl = $(this).closest("[data-role='quantityCtrl']").find("#quantity");
+        var quantity = parseInt(txtCtrl.val());
+
+        // If is not undefined
+
+        txtCtrl.val(quantity + 1);
+
+
+        // Increment
+
+    });
+
+    $('.quantity-left-minus').click(function (e) {
+        debugger;
+        // Stop acting like a button
+        e.preventDefault();
+        // Get the field name
+        var txtCtrl = $(this).closest("[data-role='quantityCtrl']").find("#quantity");
+        var quantity = parseInt(txtCtrl.val());
+
+        // If is not undefined
+
+        // Increment
+        if (quantity > 0) {
+            txtCtrl.val(quantity - 1);
+        }
+    });
+
+    $(".addToCart").on("click", function (evt) {
+        var newItem = {
+            name: $(this).data("item"),
+            price: $(this).data("price"),
+            quantity: $(this).closest(".col-md-6").find("#quantity").val()
+        }
+        var addToCartItems = JSON.parse(localStorage.getItem("addToCartItems") ? localStorage.getItem("addToCartItems") : null);
+        if (!addToCartItems) {
+            addToCartItems = [];
+        }
+        addToCartItems.push(newItem);
+        localStorage.setItem("addToCartItems", JSON.stringify(addToCartItems));
+        return false;
+    });
+    </script>
+
+    <div style="height : 150px;"></div>
+        <div class="text-center" style="background-color:#222">
+            <a href="http://www.twitter.com/">
+                <img src="Twitter.jpg" class="footer-img img-circle" alt="Twitter" title="Twitter">
+            </a>
+            <a href="http://www.facebook.com/">
+                <img src="Facebook.jpg" class="footer-img img-circle" alt="Facebook" title="Facebook">
+            </a>
+            <a href="http://www.instagram.com/">
+                <img src="Instagram.jpg" class="footer-img img-circle" alt="Instagram" title="Instagram">
+            </a>
+            <a href="http://plus.google.com/">
+                <img src="Google+.jpg" class="footer-img img-circle" alt="Google+" title="Google+">
+            </a>
+            <a href="http://www.pinterest.com/">
+                <img src="Pinterest.jpg" class="footer-img img-circle" alt="Pinterest" title="Pinterest">
+            </a>
+            <a href="http://www.youtube.com/">
+                <img src="Youtube.jpg" class="footer-img img-circle" alt="YouTube" title="YouTube">
+            </a>
+        </div>
+
+</body>
+</html>

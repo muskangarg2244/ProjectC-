@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login</title>
+    <link href="n-cafe.ico" rel="shortcut icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .loginmodal-container {
+  padding: 30px;
+  max-width: 350px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  font-family: roboto;
+}
+
+.loginmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: roboto;
+}
+
+.loginmodal-container input[type=submit] {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.loginmodal-container input[type=text], input[type=password], input[type=email] {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  -webkit-appearance: none;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  /* border-radius: 2px; */
+  padding: 0 8px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.loginmodal-container input[type=text]:hover, input[type=password]:hover {
+  border: 1px solid #b9b9b9;
+  border-top: 1px solid #a0a0a0;
+  -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.loginmodal {
+  text-align: center;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 700;
+  height: 36px;
+  padding: 0 8px;
+/* border-radius: 3px; */
+/* -webkit-user-select: none;
+  user-select: none; */
+}
+
+.loginmodal-submit {
+  /* border: 1px solid #3079ed; */
+  border: 0px;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  background-color: #4d90fe;
+  padding: 17px 0px;
+  font-family: roboto;
+  font-size: 14px;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+}
+
+.loginmodal-submit:hover {
+  /* border: 1px solid #2f5bb7; */
+  border: 0px;
+  text-shadow: 0 1px rgba(0,0,0,0.3);
+  background-color: #357ae8;
+  /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+}
+
+.loginmodal-container a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 400;
+  text-align: center;
+  display: inline-block;
+  opacity: 0.6;
+  transition: opacity ease 0.5s;
+}
+
+.login-help{
+  font-size: 12px;
+}
+
+.footer-img {
+  height: 100px;
+  width: auto;
+  padding: 25px;
+  border: 0;
+}
+    </style>
+</head>
+<body background="bann.jpg">
+    <nav class="navbar navbar-inverse">
+     <div class="container-fluid">
+       <div class="navbar-header topper">
+
+         <ul class="nav navbar-nav">
+             <li><img src="n-cafe.png" width="40px" height="40px" class="logo"></li>
+         <li><a class="navbar-brand" href="Restaurant.html">Naniya'zz</a></li>
+         </ul>
+       </div>
+       <ul class="nav navbar-nav">
+         <li class="active"><a href="about.html">About</a></li>
+         <li class="active"><a href="contact.html">Contact Us</a></li>
+        </ul>
+       <ul class="nav navbar-nav navbar-right">
+         <li><a id="aSignUp" href="UserInput.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+
+       </ul>
+     </div>
+   </nav>
+    <div class="loginmodal-container" style="margin-top:120px">
+        <h1>Login to Your Account</h1><br>
+        <form id="frmLogin" action="Restaurantx.html">
+            <input id="textEmailAddress" name="user" placeholder="Email Address" required="" type="email">
+            <input id="textPassword" type="password" name="pass" placeholder="Password" required="">
+            <input type="submit" name="login" class="login loginmodal-submit" value="Login">
+        </form>
+
+        <div class="login-help">
+            <a href="UserInput.html">SignUp</a>
+        </div>
+    </div>
+    <script>
+        $("#aSignUp").on("click", function () {
+            location.href = "UserInput.html";
+        });
+        $("#aLogin").on("click", function () {
+            location.href = "login.html";
+        });
+
+        localStorage.setItem("loggedInUser", "");
+        $("#frmLogin").on("submit", function (evt) {
+
+            var loginPassed = false;
+            var matchedUser = {};
+            var users = JSON.parse(localStorage.getItem("users"));
+            if (users && users.length) {
+                for (var i = 0; i < users.length; i++) {
+                    var user = users[i];
+                    if (user.email.toLowerCase() === $('#textEmailAddress').val().toLowerCase()) {
+                        if (user.password === $('#textPassword').val()) {
+                            matchedUser = user;
+                            loginPassed = true;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            if (!loginPassed) {
+                alert("Login Failed");
+                evt.preventDefault();
+                return;
+            }
+
+
+            localStorage.setItem("loggedInUser", matchedUser.firstName);
+        });
+
+
+    </script>
+<div style="height : 150px;"></div>
+    <div class="text-center" style="background-color:#222">
+        <a href="http://www.twitter.com/">
+            <img src="Twitter.jpg" class="footer-img img-circle" alt="Twitter" title="Twitter">
+        </a>
+        <a href="http://www.facebook.com/">
+            <img src="Facebook.jpg" class="footer-img img-circle" alt="Facebook" title="Facebook">
+        </a>
+        <a href="http://www.instagram.com/">
+            <img src="Instagram.jpg" class="footer-img img-circle" alt="Instagram" title="Instagram">
+        </a>
+        <a href="http://plus.google.com/">
+            <img src="Google+.jpg" class="footer-img img-circle" alt="Google+" title="Google+">
+        </a>
+        <a href="http://www.pinterest.com/">
+            <img src="Pinterest.jpg" class="footer-img img-circle" alt="Pinterest" title="Pinterest">
+        </a>
+        <a href="http://www.youtube.com/">
+            <img src="Youtube.jpg" class="footer-img img-circle" alt="YouTube" title="YouTube">
+        </a>
+    </div>
+
+</body>
+</html>

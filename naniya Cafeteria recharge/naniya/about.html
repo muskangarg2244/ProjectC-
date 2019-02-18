@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>about</title>
+  <link href="n-cafe" rel="shortcut icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="http://maps.google.com/maps/api/js?sensor=false" type="text/javascript"></script>
+
+  <style>
+  /* Note: Try to remove the following lines to see the effect of CSS positioning */
+  .affix {
+      top: 0;
+      width: 100%;
+  }
+
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+  }
+	.topper
+	  {
+		  display: flex;
+	  }
+	  .logo
+	  {
+		  margin: 3px;
+
+	  }
+
+      .footer-img {
+		height: 100px;
+		width: auto;
+		padding: 25px;
+		border: 0;
+	}
+  </style>
+</head>
+<body background="abann2.jpg">
+
+ <!-- This is a Navbar -->
+ <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header topper">
+     <img src="n-cafe.png" width="40px" height="40px" class="logo">
+      <ul class="nav navbar-nav">
+      <li><a class="navbar-brand" href="Restaurant.html"><strong>Naniya'zz Cafe</strong></a></li>
+      </ul>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="about.html">About</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+     </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="UserInput.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <li><a href="Order.html">My Cart <span class=glyphicon glyphicon-shopping-cart></span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<div style="display:flex; background-color: #333333;">
+	<div><img src="n-cafe.png" width="300px" height="300px"></div>
+	<div style="margin: 30px; font-family: sans-serif; color: lightyellow;"><p>The new era of food at Naniya'zz Foodz that will rock your taste buds wild! The desire get deeper, the hunger levels get higher and the food gets yummier! We bring out your favorite food at your doorstep within few minutes.</p>
+
+<p>True freedom is the ability to do WHAT you want to do WHEN you want to do it. So get up, pick your phone and your roaming foodie heart is just one click away from you. With warmth and happiness our chefs offering you some of the most mouth watering, eye pop, traditional home cooked hygiene dishes. We promise it's going to be a healthy and hygiene ride for your grumbling tummies and tingling tongues.</p>
+
+		<p>Naniya'zz Foodz for all food lovers who loves homely food, Join us</p>
+
+<p>We have a daily changing dynamic menu of home-style meals, so every morning would be a new surprise awaiting you. We are constantly adding to our menu; so if there's any dish you'd like to see on our menu please write to us.</p>
+
+<p>We hope you enjoy the Naniya'zz Foodz experience. Please do send in your feedback and ideas to <a href ="contact.html">help@Naniya'zzFoodz.com</a> and help us improve our service. </p></div>
+
+</div>
+<div style="height : 50px;"></div>
+<div id="map" style="height: 500px; width: 95%; margin: auto;"></div>
+
+<script type="text/javascript">
+    var locations = [
+      ['Panchkula', 30.6942, 76.8606],//, 4],
+      ['Karnal', 29.6857, 76.9905],//, 5],
+      ['Kurukshetra', 29.9695, 76.8783],//, 3],
+      ['Chandigarh', 30.7333, 76.7794],//, 2]
+      ['Saharanpur',29.9671, 77.5510],
+      ['Sirsa',29.5336, 75.0177],
+      ['Dehradun',30.3165, 78.0322]
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 8,
+      center: new google.maps.LatLng(30.1672, 76.8684),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+
+  </script>
+
+<div style="height : 50px;"></div>
+<div class="text-center" style="background-color:#222">
+    <a href="http://www.twitter.com/">
+        <img src="Twitter.jpg" class="footer-img img-circle" alt="Twitter" title="Twitter">
+    </a>
+    <a href="http://www.facebook.com/">
+        <img src="Facebook.jpg" class="footer-img img-circle" alt="Facebook" title="Facebook">
+    </a>
+    <a href="http://www.instagram.com/">
+        <img src="Instagram.jpg" class="footer-img img-circle" alt="Instagram" title="Instagram">
+    </a>
+    <a href="http://plus.google.com/">
+        <img src="Google+.jpg" class="footer-img img-circle" alt="Google+" title="Google+">
+    </a>
+    <a href="http://www.pinterest.com/">
+        <img src="Pinterest.jpg" class="footer-img img-circle" alt="Pinterest" title="Pinterest">
+    </a>
+    <a href="http://www.youtube.com/">
+        <img src="Youtube.jpg" class="footer-img img-circle" alt="YouTube" title="YouTube">
+    </a>
+</div>
+</body>
+</html>

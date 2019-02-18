@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sign up</title>
+    <link href="n-cafe.ico" rel="shortcut icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <style>
+    .footer-img {
+      height: 100px;
+      width: auto;
+      padding: 25px;
+      border: 0;
+    }
+
+    </style>
+</head>
+<body background="bann.jpg">
+    <nav class="navbar navbar-inverse">
+     <div class="container-fluid">
+       <div class="navbar-header topper">
+
+         <ul class="nav navbar-nav">
+             <li><img src="n-cafe.png" width="40px" height="40px" class="logo"></li>
+         <li><a class="navbar-brand" href="Restaurant.html">Naniya'zz</a></li>
+         </ul>
+       </div>
+       <ul class="nav navbar-nav">
+         <li class="active"><a href="about.html">About</a></li>
+         <li class="active"><a href="#">Contact Us</a></li>
+        </ul>
+       <ul class="nav navbar-nav navbar-right">
+
+         <li><a id="aLogin" href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+       </ul>
+     </div>
+   </nav>
+    <div class="container">
+        <div class="row" style="padding-top:50px">
+
+
+            <form id="frmSignUp" class="form-horizontal" action="Restaurant.html">
+                <fieldset>
+                    <!-- Form Name -->
+                    <legend>Register Here</legend>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">First Name</label>
+                        <div class="col-md-4">
+                            <input id="textFirstName" name="textFirstName" placeholder="Insert your First Name" class="form-control input-md" required="" type="text">
+                            <span class="help-block"> </span>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Last Name</label>
+                        <div class="col-md-4">
+                            <input id="textLastName" name="textLastName" placeholder="Insert your Last Name" class="form-control input-md" required="" type="text">
+                            <span class="help-block"> </span>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Email</label>
+                        <div class="col-md-4">
+                            <input id="textEmail" name="textEmail" placeholder="Insert your Email" class="form-control input-md" required="" type="email">
+                            <span class="help-block"> </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Mobile Number</label>
+                        <div class="col-md-4">
+                            <input id="textMobileNumber" name="textMobileNumber" placeholder="Mobile Number" class="form-control input-md" min="10" maxlength="10" required="" type="number">
+                            <span class="help-block"> </span>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Password</label>
+                        <div class="col-md-4">
+                            <input id="textPassword" name="textPassword" placeholder="Insert your Password" class="form-control input-md" required="" type="password">
+                            <span class="help-block"> </span>
+                        </div>
+                    </div>
+                    <!-- Text input-->
+
+                    <!-- Button -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="singlebutton"> </label>
+                        <div class="col-md-4">
+                            <button id="btnSubmit" name="btnSubmit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+    </div>
+    <script>
+        $("#aSignUp").on("click", function () {
+            location.href = "UserInput.html";
+        });
+        $("#aLogin").on("click", function () {
+            location.href = "login.html";
+        });
+        $("#aHome").on("click", function () {
+            location.href = "home.html";
+        });
+        $("#frmSignUp").on("submit", function () {
+            var user = {
+                firstName: $('#textFirstName').val(),
+                lastName: $('#textLastName').val(),
+                email: $('#textEmail').val(),
+                mobileNumber: $('#textMobileNumber').val(),
+                password: $('#textPassword').val(),
+            }
+            var users = JSON.parse(localStorage.getItem("users"));
+            if (!users) {
+                users = [];
+            }
+            users.push(user);
+            localStorage.setItem("users", JSON.stringify(users));
+
+            localStorage.setItem("loggedInUser", user.firstName);
+        });
+    </script>
+
+    <div style="height : 150px;"></div>
+        <div class="text-center" style="background-color:#222">
+            <a href="http://www.twitter.com/">
+                <img src="Twitter.jpg" class="footer-img img-circle" alt="Twitter" title="Twitter">
+            </a>
+            <a href="http://www.facebook.com/">
+                <img src="Facebook.jpg" class="footer-img img-circle" alt="Facebook" title="Facebook">
+            </a>
+            <a href="http://www.instagram.com/">
+                <img src="Instagram.jpg" class="footer-img img-circle" alt="Instagram" title="Instagram">
+            </a>
+            <a href="http://plus.google.com/">
+                <img src="Google+.jpg" class="footer-img img-circle" alt="Google+" title="Google+">
+            </a>
+            <a href="http://www.pinterest.com/">
+                <img src="Pinterest.jpg" class="footer-img img-circle" alt="Pinterest" title="Pinterest">
+            </a>
+            <a href="http://www.youtube.com/">
+                <img src="Youtube.jpg" class="footer-img img-circle" alt="YouTube" title="YouTube">
+            </a>
+        </div>
+</body>
+</html>
